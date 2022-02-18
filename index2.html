@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+        }
+
+        .d1 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            margin-right: 50px;
+            position: relative;
+        }
+
+        .comprar {
+            display: block;
+            background: aliceblue;
+            text-align: center;
+            width: 70px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+
+        .d2 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cubo {
+            background: black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <span class="comprar" onclick='adicionarCarrinho("<p>aaa</p>")'>Comprar</span>
+    </div>
+    <div class="d2">
+        
+    </div>
+    <script>
+        function adicionarCarrinho(a) {
+            console.log(a)
+            let div = document.createElement("div")
+            div.classList.add('cubo')
+            document.querySelector('.d2').append(div)
+        }
+    </script>
+</body>
+</html>
