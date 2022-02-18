@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: aliceblue;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            margin-left: 20px;
+        }
+
+        .menu-web ul {
+            margin-right: 20px;
+            display: flex;
+        }
+
+        .menu-web ul li + li {
+            margin-left: 10px;
+        }
+
+        .menu-mobile {
+            background-color: aqua;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100vh;
+            display: none;
+        }
+
+        .menu-mobile .sair {
+            display: block;
+            text-align: end;
+            font-size: 20px;
+            margin: 15px;
+            cursor: default;
+        }
+
+        .menu-mobile li {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .menu-mobile li + li {
+            margin-top: 20px;
+        }
+
+        .menu-mobile hr {
+            border-color: black;
+            width: 60%;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #button-menu {
+            display: none;
+        }
+
+        .display-block {
+            display: block;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        .red {
+            background: red;
+        }
+
+        @media (max-width: 700px) {
+            .menu-web {
+                display: none;
+            }
+
+            #button-menu {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>R4 Eletro</h1>
+        <ul class="menu-web">
+            <li>Contato</li>
+            <li>Sobre nos</li>
+            <li>Ofertas</li>
+        </ul>
+        <ul class="menu-mobile">
+            <span class="sair" onclick="fecharMenu()">X</span>
+            <li>Contao</li>
+            <hr>
+            <li>Contato</li>
+            <hr>
+            <li>Sobre nos</li>
+            <hr>
+            <li>Ofertas</li>
+            <hr>
+            <li>Contato</li>
+            <hr>
+            <li>Sobre nos</li>
+            <hr>
+            <li>Ofertas</li>
+        </ul>
+        <button id="button-menu" onclick="aparecerMenu()">=</button>
+    </header>
+
+    <script>
+        const buttonMenu = document.querySelector('#buttonMenu')
+
+        function aparecerMenu() {
+            document.querySelector('#button-menu').classList.toggle('display-none')
+            document.querySelector('.menu-mobile').classList.toggle('display-block')
+        }
+
+        function fecharMenu () {
+            document.querySelector('#button-menu').classList.toggle('display-none')
+            document.querySelector('.menu-mobile').classList.toggle('display-block')
+        }
+    </script>
+</body>
+</html>
